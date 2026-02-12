@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civica Fermi - AI e Comunità</title>
+    <style>
+        /* Reset stili base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f4f7f6;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            position: fixed;
+            height: 100%;
+            z-index: 100;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #ecf0f1;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
+        }
+
+        .sidebar-btn {
+            background: none;
+            border: none;
+            color: #bdc3c7;
+            padding: 15px;
+            text-align: left;
+            width: 100%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 8px;
+            margin-bottom: 5px;
+        }
+
+        .sidebar-btn:hover {
+            background-color: #34495e;
+            color: white;
+            padding-left: 25px;
+        }
+
+        /* Contenuto Principale */
+        .main-content {
+            margin-left: 250px;
+            padding: 40px;
+            width: 100%;
+        }
+
+        .header-title {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            line-height: 1.6;
+            color: #34495e;
+        }
+
+        .card h3 {
+            margin: 25px 0 15px 0;
+            color: #2c3e50;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+        }
+
+        .card ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .card li {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 70px;
+                padding: 10px;
+            }
+            .sidebar h2, .sidebar-btn span {
+                display: none;
+            }
+            .main-content {
+                margin-left: 70px;
+                padding: 20px;
+            }
+            .header-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="sidebar">
+        <h2>Civica Fermi</h2>
+        <a href="./siti/incontro_aggiornato.html"><button class="sidebar-btn"><span>📊</span> Sondaggio</button></a>
+        <a href="siti/mindfermi.html"><button class="sidebar-btn"><span>🧠</span> MindFermi</button></a>
+        <a href="siti/energivora.html"><button class="sidebar-btn"><span>⚡</span> Energivora</button></a>
+        <a href="siti/ai_vs_umano.html"><button class="sidebar-btn"><span>🛤️</span> Ai VS Umano</button></a>
+        <a href="siti/cose.html"><button class="sidebar-btn"><span>📞</span> Cose</button></a>
+    </nav>
+
+    <main class="main-content">
+        <h1 class="header-title">L'impatto dell'AI nella comunità scolastica: profili etici e sociali</h1>
+        
+        <div class="card">
+            <p><strong>Benvenuti nel nostro viaggio nell'Intelligenza Artificiale.</strong></p>
+            <p>Siamo la classe <strong>5Cs</strong> e questo spazio digitale è il risultato di un percorso di approfondimento collettivo su una delle tecnologie più trasformative del nostro secolo.</p>
+
+            <h3>Le nostre radici: Scienza e Coscienza</h3>
+            <p>Il filo conduttore che ha guidato i nostri rami di ricerca è stato il saggio <em>"AI e coscienza umana: un dialogo possibile"</em> di Gennaro Monacelli. Questo testo ci ha fornito gli strumenti critici per porci domande fondamentali:</p>
+            
+            <ul>
+                <li>Può una macchina arrivare a "sentire"?</li>
+                <li>Qual è il confine tra calcolo algoritmico e pensiero creativo?</li>
+                <li>Come cambierà l'essenza dell'essere umano nel confronto con un'entità artificiale?</li>
+            </ul>
+
+            <h3>Esplora il nostro lavoro</h3>
+            <p>All'interno di questo sito troverete i diversi percorsi che abbiamo tracciato. Dalle implicazioni etiche alle applicazioni pratiche, ogni sezione rappresenta un tassello del mosaico che abbiamo composto.</p>
+            
+            <p style="margin-top: 30px; font-style: italic; color: #7f8c8d; text-align: right;">— La classe 5Cs, Buona navigazione nel futuro!</p>
+        </div>
+    </main>
+
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="j1u7qsgZbn-t3Ue4U0g2F";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+
+</body>
+</html>
