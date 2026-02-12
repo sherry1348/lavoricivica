@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Risultati</title>
+
+    <style>
+        body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        }
+
+        header {
+        color: #fff;
+        padding: 20px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .accordion-btn {
+        width: 95%;
+        padding: 15px;
+        background: #0384CB;
+        color: white;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        font-size: 25px;
+        border: 2px solid white;   /* ✅ BORDO */
+        border-radius: 10px;      /* angoli morbidi */
+        box-sizing: border-box;
+        }
+
+        .accordion-btn:hover {
+        background: #05367f;
+        }
+
+        .accordion-content {
+        max-height: 0;
+        width:95%;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background: #f1f1f1;
+        padding: 0 15px;
+        border: 2px solid white;   /* ✅ BORDO */
+        border-radius: 10px;      /* angoli morbidi */
+        box-sizing: border-box;
+        }
+
+        .accordion-content p {
+        margin: 15px 0;
+        }
+
+        .charts-wrapper {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px; 
+            padding-bottom: 30px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 380px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .page-box {
+            max-width: 1200px;
+            margin: 0 auto;       /* centra il box */
+            margin-top: 20px;
+            background: white;
+            min-height: 100vh;    /* altezza schermo */
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 20px;
+            border: 2px solid white;   /* ✅ BORDO */
+            border-radius: 10px;      /* angoli morbidi */
+            box-sizing: border-box;
+        }
+
+        .ai-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        }
+
+        .ai-table th,
+        .ai-table td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+        text-align: center;
+        }
+
+        .ai-table thead {
+        background-color: #f2f2f2;
+        }
+
+        .ai-table tr:nth-child(even) {
+        background-color: #fafafa;
+        }
+    </style>
+
+</head>
+<body style="font-size:18px">
+    
+    <header>
+        <img src="https://www.liceofermiaversa.edu.it/wp-content/uploads/2022/12/LogoFermiCompleto.webp" alt="Logo Istituto Fermi" style="width: 350px; height: auto; margin-left: 30px;">
+        <h1 style="font-family: Lato; font-size: 25px; text-align: center; color: black; margin-top: -60px">L’Intelligenza Artificiale a Scuola</h1>
+    </header>
+   
+
+    <div style="position: fixed; bottom: 0;  width: 100%; font-family: 'Lora serif'; font-size: 25px; text-align: center; z-index: 100; color: white; background-color: #002154; padding: 0px;">
+        <p>Realizzato da Cristian Sorrentino e Waad Gasri della 5°CS</p>
+    </div>
+
+    <div class="page-box">
+    <main style="margin: 50px;">
+        <h2 style="font-family: Lato; font-size: 22px; color: black;">Chi siamo e cosa abbiamo fatto</h2>
+        <p style="font-family: Lato; font-size: 18px; color: black;">
+        Questo sito nasce da un progetto di ricerca realizzato all’interno della nostra scuola con l’obiettivo di comprendere il livello 
+        di conoscenza, l’utilizzo e le opinioni di studenti e docenti sull’Intelligenza Artificiale in ambito scolastico.
+        Attraverso un sondaggio realizzato con Google Moduli, abbiamo posto una serie di domande mirate per analizzare diversi aspetti: 
+        dalla familiarità con il concetto di Intelligenza Artificiale all’uso concreto di strumenti come chatbot e assistenti digitali; 
+        dalle potenzialità dell’IA a scuola (supporto allo studio, inclusione, preparazione delle lezioni) alle possibili criticità, 
+        come la dipendenza dalla tecnologia, i rischi per la privacy e la riduzione del pensiero critico. 
+        Il questionario ha inoltre esplorato il grado di fiducia nei confronti dell’IA, la necessità di una sua regolamentazione, 
+        l’attenzione alla tutela dei dati personali e gli strumenti di Intelligenza Artificiale maggiormente utilizzati.
+        I dati raccolti offrono una fotografia significativa delle percezioni e delle aspettative della comunità 
+        scolastica rispetto a queste tecnologie emergenti.
+        </p>
+    </main>
+
+    <main style="margin: 50px;">
+        <h2 style="font-family: Lato; font-size: 22px; color: black;">Dati in Pillole (relativi a fine 2025)</h2>
+        <p style="font-family: Lato; font-size: 18px; color: black;">
+        • Il 66% delle persone attualmente utilizza l’intelligenza artificiale su base regolare.<br>
+        • Quasi 1,8 miliardi di persone in tutto il mondo hanno utilizzato strumenti di intelligenza artificiale, con 500-600 milioni che li utilizzano quotidianamente.<br>
+        • Il 78% delle aziende utilizza l’intelligenza artificiale in almeno una funzione aziendale.<br>
+        • L’adozione dell’IA è più diffusa nei mercati emergenti, con India e Nigeria che registrano un utilizzo regolare del 92%.
+        </p>
+    </main>
+
+    <main style="margin: 50px;">
+        <h2 style="font-family: Lato; font-size: 22px; color: black;">Quanto consuma l'intelligenza artificiale?</h2>
+        <p style="font-family: Lato; font-size: 18px; color: black;">
+        L'intelligenza artificiale consuma molta energia, soprattutto nei grandi modelli e nei data center, con stime che variano 
+        da 0.24 Wh (per un prompt testuale) fino a consumi giornalieri di ChatGPT equivalenti a 33.000 case, e il settore nel suo complesso
+        potrebbe arrivare a 134 TWh entro il 2027, superando il consumo di intere nazioni, richiedendo anche enormi quantità d'acqua per il
+        raffreddamento dei server e generando significative emissioni di CO2, con impatti che cresceranno rapidamente.<br><br>
+        <b>Costi Energetici Dettagliati:</b><br>
+        • Per una singola richiesta: Un prompt (interrogazione) a un'IA come ChatGPT può consumare da 0.24 a 0.34 Wh, ma generare un'immagine o 
+        un video è molto più dispendioso.<br>
+        • Addestramento modelli: L'addestramento iniziale di modelli come GPT-3 ha consumato circa 1300 MWh, pari all'energia di 130 case 
+        americane in un anno, e l'addestramento di modelli più recenti è ancora più energivoro.<br>
+        • Funzionamento di un chatbot: ChatGPT da solo consuma circa 1 GWh al giorno, l'equivalente di 33.000 abitazioni.<br>
+        • Grandi aziende: Solo Google e Microsoft hanno consumato 24 TWh di elettricità nel 2023 per l'AI.
+        </p>
+    </main>
+
+    <main style="margin: 50px;">
+        <h2 style="font-family: Lato; font-size: 22px; color: black;">Impatto ambientale dell’intelligenza artificiale nel 2025</h2>
+        <p style="font-family: Lato; font-size: 18px; color: black;">
+        • Emissioni di CO₂: tra 32,6 e 79,7 milioni di tonnellate all’anno, un livello comparabile alle emissioni annuali di città come New York.<br>
+        • Consumo idrico: tra 312,5 e 764,6 miliardi di litri, un volume paragonabile al consumo annuo globale di acqua in bottiglia.<br>
+        • Dati sottostimati: le attuali informative aziendali non separano l’IA da altri carichi di lavoro e ignorano quasi sempre il consumo idrico indiretto.<br> 
+        • Rischio sistemico: senza maggiore trasparenza, l’impatto reale dell’IA rischia di crescere senza controllo.
+        </p>
+    </main>
+
+    <main style="margin: 50px;">
+        <h2 style="font-family: Lato; font-size: 22px; color: black;">Numero di persone che utilizzano l’IA (per strumento)</h2>
+        <p style="font-family: Lato; font-size: 18px; color: black;">
+           <table class="ai-table">
+            <thead>
+                <tr>
+                <th>Posizione</th>
+                <th>AI Tool</th>
+                <th>Utenti totali (2025)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>1</td>
+                <td>ChatGPT (OpenAI)</td>
+                <td>2,8 miliardi di utenti attivi al mese</td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td>Panoramica sull’intelligenza artificiale di Google</td>
+                <td>2 miliardi di utenti attivi al mese</td>
+                </tr>
+                <tr>
+                <td>3</td>
+                <td>Meta AI</td>
+                <td>1 miliardo di utenti attivi al mese</td>
+                </tr>
+                <tr>
+                <td>4</td>
+                <td>Google Gemini</td>
+                <td>450 milioni di utenti attivi al mese</td>
+                </tr>
+                <tr>
+                <td>5</td>
+                <td>Canva</td>
+                <td>220 milioni di utenti attivi al mese</td>
+                </tr>
+                <tr>
+                <td>6</td>
+                <td>Google AI Mode</td>
+                <td>100 milioni di utenti attivi al mese</td>
+                </tr>
+                <tr>
+                <td>7</td>
+                <td>QuillBot</td>
+                <td>50 milioni di utenti attivi al mese</td>
+                </tr>
+                <tr>
+                <td>8</td>
+                <td>Microsoft Copilot</td>
+                <td>30 milioni di utenti attivi al mese</td>
+                </tr>
+                <tr>
+                <td>9</td>
+                <td>Perplexity</td>
+                <td>22 milioni di utenti attivi al mese</td>
+                </tr>
+                <tr>
+                <td>10</td>
+                <td>Claude (Anthropic)</td>
+                <td>20 milioni di utenti attivi al mese</td>
+                </tr>
+            </tbody>
+            </table>
+    </main>
+        </p>
+
+        <main style="margin: 50px;">
+        <h2 style="font-family: Lato; font-size: 22px; color: black;">Numero di utenti AI per Paese</h2>
+        <p style="font-family: Lato; font-size: 18px; color: black;">
+        <table class="ai-table">
+        <thead>
+         <tr>
+             <th>Paese</th>
+             <th style="width: 520px;">Percentuale della popolazione che utilizza regolarmente l’Intelligenza Artificiale</th>
+            </tr>
+           </thead>
+          <tbody>
+              <tr>
+            <td>India</td>
+            <td>92%</td>
+            </tr>
+            <tr>
+            <td>Nigeria</td>
+            <td>92%</td>
+            </tr>
+            <tr>
+            <td>Emirati Arabi Uniti</td>
+            <td>91%</td>
+            </tr>
+            <tr>
+            <td>Egitto</td>
+            <td>90%</td>
+            </tr>
+            <tr>
+            <td>Cina</td>
+            <td>89%</td>
+            </tr>
+            <tr>
+            <td>Sudafrica</td>
+            <td>83%</td>
+            </tr>
+            <tr>
+            <td>Brasile</td>
+            <td>82%</td>
+            </tr>
+            <tr>
+            <td>Turchia</td>
+            <td>81%</td>
+            </tr>
+            <tr>
+            <td>Messico</td>
+            <td>77%</td>
+            </tr>
+            <tr>
+            <td>Singapore</td>
+            <td>73%</td>
+            </tr>
+            <tr>
+            <td>Stati Uniti</td>
+            <td>53%</td>
+            </tr>
+            <tr>
+            <td>Regno Unito</td>
+            <td>52%</td>
+            </tr>
+            <tr>
+            <td>Germania</td>
+            <td>51%</td>
+            </tr>
+            <tr>
+            <td>Giappone</td>
+            <td>50%</td>
+            </tr>
+            <tr>
+            <td>Svezia</td>
+            <td>47%</td>
+            </tr>
+            <tr>
+            <td>Paesi Bassi</td>
+            <td>43%</td>
+            </tr>
+        </tbody>
+        </table>
+
+        </p>
+    </main>
+    </main>
+
+    <div class="accordion" style="margin-left: 50px; margin-bottom: 50px;">
+
+        <button class="accordion-btn">Docenti</button>
+        <div class="accordion-content">
+            <p>Risultati interattivi docenti:</p>
+            <div class="charts-wrapper">
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1418013933&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=673898549&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=28634507&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1538757775&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=251589187&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=809352374&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1302977&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1880926403&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1665817002&amp;format=interactive"></iframe>
+            </div>
+        </div>
+
+         <br>
+
+        <button class="accordion-btn">1 anno</button>
+        <div class="accordion-content">
+            <p>Risultati interattivi primo anno:</p>
+            <div class="charts-wrapper">
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1747013409&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=946166420&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1989266123&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=376723671&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=2045541114&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=899368305&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=396008492&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1055412052&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1964324939&amp;format=interactive"></iframe>
+            </div>
+        </div>
+        
+        <br>
+
+        <button class="accordion-btn">2 anno</button>
+        <div class="accordion-content">
+            <p>Risultati interattivi secondo anno:</p>
+            <div class="charts-wrapper">
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1306274298&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=352039609&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=2105763338&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1608347446&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=2095410025&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1034573796&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1058962659&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1346195837&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1810772640&amp;format=interactive"></iframe>
+            </div>
+        </div>
+
+        <br>
+
+        <button class="accordion-btn">3 anno</button>
+        <div class="accordion-content">
+            <p>Risultati interattivi terzo anno:</p>
+            <div class="charts-wrapper">
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1392597913&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1789302125&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1081118877&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=2137047456&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=2021000648&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1263827933&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=651296063&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=870923303&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=204543145&amp;format=interactive"></iframe>
+            </div>
+        </div>
+
+        <br>
+
+        <button class="accordion-btn">4 anno</button>
+        <div class="accordion-content">
+            <p>Risultati interattivi quarto anno:</p>
+            <div class="charts-wrapper">
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=483753059&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1857892060&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=305368406&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=940339854&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=126424273&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=684423728&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=824351737&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1068517024&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1787855331&amp;format=interactive"></iframe>
+            </div>
+        </div>
+
+        <br>
+
+        <button class="accordion-btn">5 anno</button>
+        <div class="accordion-content">
+            <p>Risultati interattivi quinto anno:</p>
+            <div class="charts-wrapper">
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=2070741134&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1933008157&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=633221816&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1681145414&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1307555508&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1629961757&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=473062963&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=1488741865&amp;format=interactive"></iframe>
+                <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRyFFla10caLzeuc7AQFv4ygsUBaYzeWabOLp8B9zC73jZxcPcvuU6bvsisoavUjdm2wuguF46eOQiQ/pubchart?oid=271623986&amp;format=interactive"></iframe>
+            </div>
+        </div>
+        <br>
+    </div>
+
+
+    <script>
+      const buttons = document.querySelectorAll(".accordion-btn");
+
+      buttons.forEach(button => {
+        button.addEventListener("click", () => {
+          const content = button.nextElementSibling;
+
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      });
+    </script>
+</div>
+</body>
+</html>
